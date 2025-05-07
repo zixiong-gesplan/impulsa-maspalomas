@@ -1,0 +1,87 @@
+---
+import Logo from "@assets/logo.svg";
+---
+
+<footer class="border-t py-12 md:py-16 bg-gray-50">
+  <div class="container grid grid-cols-1 md:grid-cols-4 gap-8 mx-auto">
+    <div class="md:col-span-2">
+      <div class="flex items-center gap-2 mb-4">
+        <Logo class="w-96" />
+      </div>
+      <p class="text-muted-foreground max-w-xs">
+        Proyecto para mejorar la diversificación de mercados y productos
+        turísticos, modernizar el destino e incorporar la sostenibilidad como
+        principio básico.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-medium mb-4">Enlaces rápidos</h3>
+      <ul class="space-y-2">
+        <li>
+          <a
+            href="#proyecto"
+            class="text-sm text-muted-foreground hover:text-amber-600"
+          >
+            El Proyecto
+          </a>
+        </li>
+        <li>
+          <a
+            href="#ejes"
+            class="text-sm text-muted-foreground hover:text-amber-600"
+          >
+            Ejes de Actuación
+          </a>
+        </li>
+        <li>
+          <a
+            href="#actuaciones"
+            class="text-sm text-muted-foreground hover:text-amber-600"
+          >
+            Actuaciones
+          </a>
+        </li>
+        <li>
+          <a
+            href="#contacto"
+            class="text-sm text-muted-foreground hover:text-amber-600"
+          >
+            Contacto
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-medium mb-4">Contacto</h3>
+      <ul class="space-y-2">
+        <li class="text-sm text-muted-foreground">Cabildo de Gran Canaria</li>
+        <li class="text-sm text-muted-foreground">
+          Consejo Insular de la Energía (CIEGC)
+        </li>
+        <li class="text-sm text-muted-foreground">
+          Ayuntamiento de San Bartolomé de Tirajana
+        </li>
+        <li>
+          <a
+            href="mailto:info@impulsamaspalomas.es"
+            class="text-sm text-blue-600 hover:underline"
+          >
+            info@impulsamaspalomas.es
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="container mt-8 pt-8 border-t mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-sm text-muted-foreground">
+        © {new Date().getFullYear()} ImpulsaMaspalomas. Todos los derechos reservados.
+      </p>
+      <div class="flex items-center gap-2">
+        <span class="text-xs text-muted-foreground">
+          Proyecto financiado por la Unión Europea - NextGenerationEU
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>
