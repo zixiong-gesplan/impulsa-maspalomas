@@ -1,5 +1,6 @@
 ---
 import Logo from "@assets/logo.svg";
+import { ChevronDown } from "@lucide/astro";
 ---
 
 <header
@@ -7,7 +8,7 @@ import Logo from "@assets/logo.svg";
 >
   <div class="container flex h-16 items-center justify-between p-4">
     <div class="flex items-center gap-2 4">
-      <Logo class="h-16" />
+      <Logo class="h-8 md:h-12" />
     </div>
     <nav class="hidden md:flex items-center gap-6">
       <a
@@ -41,10 +42,10 @@ import Logo from "@assets/logo.svg";
       >
         Más información
       </button>
-      <!-- <button variant="outline" size="icon" class="md:hidden">
-              <ChevronDown class="h-5 w-5" />
-              <span class="sr-only">Menu</span>
-            </button> -->
+      <button class="md:hidden">
+        <ChevronDown class="h-5 w-5" />
+        <span class="sr-only">Menu</span>
+      </button>
     </div>
   </div>
 </header>

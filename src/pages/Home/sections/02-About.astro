@@ -1,0 +1,89 @@
+---
+import Chip from "@components/Chip.astro";
+import { Calendar, Leaf, Monitor, TrendingUp } from "@lucide/astro";
+---
+
+<section id="proyecto" class="px-8 py-20 w-full">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <div class="mx-auto">
+      <Chip> Sobre el proyecto </Chip>
+      <h2
+        class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-6"
+      >
+        Impulsa Maspalomas
+      </h2>
+      <div class="space-y-4 text-muted-foreground">
+        <p>
+          El objetivo general de ImpulsaMaspalomas es mejorar la capacidad de
+          resiliencia de la zona turística de Maspalomas Costa Canaria en el
+          corto y medio plazo, principalmente a través de la puesta en valor del
+          patrimonio natural existente y del recurso turístico de las dunas como
+          eje vertebrador.
+        </p>
+        <p>
+          De esta manera se mejorará la reputación verde del destino turístico
+          más importante de la isla a través de una propuesta en la que la
+          sostenibilidad y la transformación digital se combinan para enriquecer
+          sus productos turísticos.
+        </p>
+        <p>
+          Este proyecto cuenta con una financiación del 100% a través de los
+          fondos Next Generation para sus 5,5 millones de euros de presupuesto.
+        </p>
+      </div>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4">
+        <button
+          class="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-md text-base font-medium transition-colors flex items-center justify-center"
+        >
+          Descargar información
+        </button>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-4 mx-auto">
+      <div
+        class="bg-amber-100 rounded-xl p-6 flex flex-col items-center text-center"
+      >
+        <div class="bg-amber-200 rounded-full p-3 mb-4">
+          <Calendar class="h-6 w-6 text-amber-700" />
+        </div>
+        <h3 class="font-bold mb-2">Duración</h3>
+        <p class="text-sm text-muted-foreground">
+          Proyecto a desarrollar durante 3 años
+        </p>
+      </div>
+      <div
+        class="bg-blue-100 rounded-xl p-6 flex flex-col items-center text-center"
+      >
+        <div class="bg-blue-200 rounded-full p-3 mb-4">
+          <TrendingUp class="h-6 w-6 text-blue-700" />
+        </div>
+        <h3 class="font-bold mb-2">Presupuesto</h3>
+        <p class="text-sm text-muted-foreground">
+          5,5 millones de euros de fondos Next Generation
+        </p>
+      </div>
+      <div
+        class="bg-green-100 rounded-xl p-6 flex flex-col items-center text-center"
+      >
+        <div class="bg-green-200 rounded-full p-3 mb-4">
+          <Leaf class="h-6 w-6 text-green-700" />
+        </div>
+        <h3 class="font-bold mb-2">Sostenibilidad</h3>
+        <p class="text-sm text-muted-foreground">
+          Mejora de parámetros de sostenibilidad en toda la zona
+        </p>
+      </div>
+      <div
+        class="bg-purple-100 rounded-xl p-6 flex flex-col items-center text-center"
+      >
+        <div class="bg-purple-200 rounded-full p-3 mb-4">
+          <Monitor class="h-6 w-6 text-purple-700" />
+        </div>
+        <h3 class="font-bold mb-2">Digitalización</h3>
+        <p class="text-sm text-muted-foreground">
+          Transformación digital del destino turístico
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
