@@ -1,18 +1,15 @@
 ---
-import { ArrowRight, Calendar } from "@lucide/astro";
+import { ArrowRight } from "@lucide/astro";
 import Chip from "@components/Chip.astro";
-import Placeholder from "@assets/placeholder.svg";
 ---
 
-<section
-  class="relative overflow-hidden py-20 md:py-32 bg-gradient-to-b from-amber-50 to-blue-50"
->
+<section class="relative overflow-hidden py-20 md:py-32">
   <div class="absolute inset-0 bg-grid-black/[0.02]"></div>
   <div
     class="container relative flex flex-col items-center text-center mx-auto"
   >
     <Chip>
-      <Calendar class="mr-1 h-4 w-4" /> Inicio tras el verano de 2023
+      Una iniciativa de MASDUNAS
     </Chip>
     <h1
       class="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl mb-6"
@@ -20,7 +17,7 @@ import Placeholder from "@assets/placeholder.svg";
       <span
         class="overflow-hidden flex flex-col md:flex-row justify-center items-center"
       >
-        <span class="p-2 pr-4"> Transformando</span>
+        <span class="p-2 pr-4 md:mb-6"> Transformando</span>
         <svg
           class="w-80 md:w-96"
           viewBox="0 0 4303 1197"
@@ -88,8 +85,8 @@ import Placeholder from "@assets/placeholder.svg";
         <ArrowRight class="ml-2 h-4 w-4" />
       </buton>
     </div>
-    <div class="mt-16 w-full max-w-5xl">
+    <!-- <div class="mt-16 w-full max-w-5xl">
       <Placeholder class="w-full" />
-    </div>
+    </div> -->
   </div>
 </section>

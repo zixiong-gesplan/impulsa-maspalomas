@@ -1,89 +1,67 @@
 ---
-import Chip from "@components/Chip.astro";
-import { Calendar, Leaf, Monitor, TrendingUp } from "@lucide/astro";
+import AudioGuide from "@components/AudioGuide.astro";
 ---
 
-<section id="proyecto" class="px-8 py-20 w-full">
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-    <div class="mx-auto">
-      <Chip> Sobre el proyecto </Chip>
-      <h2
-        class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-6"
-      >
-        Impulsa Maspalomas
-      </h2>
-      <div class="space-y-4 text-muted-foreground">
-        <p>
-          El objetivo general de ImpulsaMaspalomas es mejorar la capacidad de
-          resiliencia de la zona turística de Maspalomas Costa Canaria en el
-          corto y medio plazo, principalmente a través de la puesta en valor del
-          patrimonio natural existente y del recurso turístico de las dunas como
-          eje vertebrador.
-        </p>
-        <p>
-          De esta manera se mejorará la reputación verde del destino turístico
-          más importante de la isla a través de una propuesta en la que la
-          sostenibilidad y la transformación digital se combinan para enriquecer
-          sus productos turísticos.
-        </p>
-        <p>
-          Este proyecto cuenta con una financiación del 100% a través de los
-          fondos Next Generation para sus 5,5 millones de euros de presupuesto.
-        </p>
-      </div>
-      <div class="mt-8 flex flex-col sm:flex-row gap-4">
-        <button
-          class="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-md text-base font-medium transition-colors flex items-center justify-center"
-        >
-          Descargar información
-        </button>
-      </div>
-    </div>
-    <div class="grid grid-cols-2 gap-4 mx-auto">
-      <div
-        class="bg-amber-100 rounded-xl p-6 flex flex-col items-center text-center"
-      >
-        <div class="bg-amber-200 rounded-full p-3 mb-4">
-          <Calendar class="h-6 w-6 text-amber-700" />
-        </div>
-        <h3 class="font-bold mb-2">Duración</h3>
-        <p class="text-sm text-muted-foreground">
-          Proyecto a desarrollar durante 3 años
-        </p>
-      </div>
-      <div
-        class="bg-blue-100 rounded-xl p-6 flex flex-col items-center text-center"
-      >
-        <div class="bg-blue-200 rounded-full p-3 mb-4">
-          <TrendingUp class="h-6 w-6 text-blue-700" />
-        </div>
-        <h3 class="font-bold mb-2">Presupuesto</h3>
-        <p class="text-sm text-muted-foreground">
-          5,5 millones de euros de fondos Next Generation
-        </p>
-      </div>
-      <div
-        class="bg-green-100 rounded-xl p-6 flex flex-col items-center text-center"
-      >
-        <div class="bg-green-200 rounded-full p-3 mb-4">
-          <Leaf class="h-6 w-6 text-green-700" />
-        </div>
-        <h3 class="font-bold mb-2">Sostenibilidad</h3>
-        <p class="text-sm text-muted-foreground">
-          Mejora de parámetros de sostenibilidad en toda la zona
-        </p>
-      </div>
-      <div
-        class="bg-purple-100 rounded-xl p-6 flex flex-col items-center text-center"
-      >
-        <div class="bg-purple-200 rounded-full p-3 mb-4">
-          <Monitor class="h-6 w-6 text-purple-700" />
-        </div>
-        <h3 class="font-bold mb-2">Digitalización</h3>
-        <p class="text-sm text-muted-foreground">
-          Transformación digital del destino turístico
-        </p>
-      </div>
+<section id="proyecto" class="px-8 py-10 w-10/12 mx-auto">
+  <div class="flex flex-col md:flex-row gap-4 mb-8">
+    <img
+      src="/src/assets/Mapa.png"
+      alt="Senderos de Maspalomas"
+      class="w-1/2 h-auto mb-8 rounded-lg shadow-lg mx-auto"
+    />
+    <div
+      class="rounded-lg p-8 mb-8 bg-sky-300 w-1/2 shadow-lg text-white font-semibold"
+    >
+      <p class="">
+        Los tres senderos <span class="text-yellow-200 font-semibold"
+          >SL05SB</span
+        > son de corta distancia y escaso desnivel a superar, aunque al discurrir
+        fundamentalmente por arena suelta puede resultar algo fatigoso. Se considera
+        una ruta de
+        <span class="text-yellow-200 font-semibold shadow-2xl"
+          >baja dificultad</span
+        >. A lo largo de los tres senderos se puede admirar una de las estampas
+        paisajísticas más espectaculares de la isla, ya que se observa la cumbre
+        y la forma en escudo de la isla primigenia, divisándose incluso el Roque
+        Nublo en contraposición al paisaje árido dunar en primer plano. Para su
+        realización se recomienda evitar las horas centrales del día, dado el
+        intenso calor al que se está sometido, a pesar de ser senderos muy
+        frecuentado a cualquier hora del día.
+      </p>
+      <ul>
+        <li>
+          <p>
+            <span class="text-yellow-200 font-semibold shadow-2xl"
+              >Sendero 1.</span
+            > Distancia 2,3 km Conecta el parque reserva Tony Gallardo con el Mirador
+            Dunas y atraviesa la zona de dunas estabilizadas donde se observan baleras,
+            tarajales y ahulagas.
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="text-yellow-200 font-semibold shadow-2xl"
+              >Sendero 2.</span
+            >
+            Distancia 1,7 km Se puede contemplar numerosas dunas en distinto estado
+            de evolución asociadas a tarajales.
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="text-yellow-200 font-semibold shadow-2xl">Sendero 3.</span>
+            Distancia 2,3 km (3A) Sale del Mirador Dunas y llega a la Charca de Maspalomas,
+            lugar de observación de aves. Se puede contemplar numerosas dunas así
+            como abundantes tarajales, palmeras, juncos, entre otros. Sendero 3B
+            con distancia de 1,5 Km rodea la zona de máxima protección y conecta
+            con el parque reserva Tony Gallardo.
+          </p>
+        </li>
+      </ul>
     </div>
   </div>
+
+  <!--  -->
+
+  <AudioGuide />
 </section>
