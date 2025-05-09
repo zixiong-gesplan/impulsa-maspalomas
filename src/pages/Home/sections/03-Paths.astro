@@ -1,6 +1,6 @@
 ---
-import Chip from "@components/Chip.astro";
-import Card from "@components/Card.astro";
+import {Chip} from "@components/Chip";
+import {Card} from "@components/Card";
 import { Leaf, LightbulbIcon, TreePalm } from "@lucide/astro";
 ---
 
@@ -22,7 +22,7 @@ import { Leaf, LightbulbIcon, TreePalm } from "@lucide/astro";
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto p-8"
     >
       <Card
-        colors="border-t-amber-500"
+        borderColor="border-t-amber-500"
         pathNumber="1"
         title="Dunas de biodiversidad"
         description="Esta ruta te llevará a descubrir la influencia de la actividad humana en el entorno natural de Maspalomas."

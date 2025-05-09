@@ -216,13 +216,13 @@ export const STAND_2_3: Stand = {
   En definitiva, las Dunas de Maspalomas son un lugar repleto de vida, por lo que es fundamental que todos nos comprometamos en su protección y conservación.
   `,
   path: PATH_2,
-  next: {
-    label: "1",
-    url: "/parada-2-1"
+  prev: {
+    label: "2",
+    url: "/parada-2-2"
   },
-  prev:{
-    label:"3",
-    url:"/parada-3-1"
+  next:{
+    label:"4",
+    url:"/parada-2-4"
   }
 };
 
@@ -375,7 +375,7 @@ export const STAND_3_4: Stand = {
   audio: `A lo largo de este sendero se pueden notar cambios en la composición del suelo. Pasamos de arena seca y móvil a zonas con arena mojada y compacta...`,
   path: PATH_3,
   next: {
-    label: "5",
+    label: "5A",
     url: "/parada-3-5a",
   },
   prev: {

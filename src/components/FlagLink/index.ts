@@ -1,0 +1,1 @@
+export { default as FlagLink } from './FlagLink.astro';
