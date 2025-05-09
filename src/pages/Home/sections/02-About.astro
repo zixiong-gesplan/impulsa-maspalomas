@@ -1,5 +1,6 @@
 ---
 import AudioGuide from "@components/AudioGuide.astro";
+import { STAND_0 } from "@consts/STANDS";
 ---
 
 <section id="proyecto" class="px-8 py-10 w-10/12 mx-auto">
@@ -28,40 +29,10 @@ import AudioGuide from "@components/AudioGuide.astro";
         intenso calor al que se está sometido, a pesar de ser senderos muy
         frecuentado a cualquier hora del día.
       </p>
-      <ul>
-        <li>
-          <p>
-            <span class="text-yellow-200 font-semibold shadow-2xl"
-              >Sendero 1.</span
-            > Distancia 2,3 km Conecta el parque reserva Tony Gallardo con el Mirador
-            Dunas y atraviesa la zona de dunas estabilizadas donde se observan baleras,
-            tarajales y ahulagas.
-          </p>
-        </li>
-        <li>
-          <p>
-            <span class="text-yellow-200 font-semibold shadow-2xl"
-              >Sendero 2.</span
-            >
-            Distancia 1,7 km Se puede contemplar numerosas dunas en distinto estado
-            de evolución asociadas a tarajales.
-          </p>
-        </li>
-        <li>
-          <p>
-            <span class="text-yellow-200 font-semibold shadow-2xl">Sendero 3.</span>
-            Distancia 2,3 km (3A) Sale del Mirador Dunas y llega a la Charca de Maspalomas,
-            lugar de observación de aves. Se puede contemplar numerosas dunas así
-            como abundantes tarajales, palmeras, juncos, entre otros. Sendero 3B
-            con distancia de 1,5 Km rodea la zona de máxima protección y conecta
-            con el parque reserva Tony Gallardo.
-          </p>
-        </li>
-      </ul>
     </div>
   </div>
 
   <!--  -->
 
-  <AudioGuide />
+  <AudioGuide {...STAND_0} />
 </section>

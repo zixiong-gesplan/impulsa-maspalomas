@@ -1,8 +1,13 @@
 ---
 import { PlayCircle, Repeat, StopCircle } from "@lucide/astro";
+const { audio } = Astro.props;
 ---
 
-<div class="flex flex-row items-start text-left gap-4 w-full">
+<div
+  class="flex flex-row items-start text-left gap-4 w-full"
+  data-audio={audio}
+  id="audio-guide"
+>
   <button
     class="bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-md text-base font-medium transition-colors flex items-center justify-center cursor-pointer"
     data-action="repeat"
@@ -27,14 +32,11 @@ import { PlayCircle, Repeat, StopCircle } from "@lucide/astro";
 
 <script>
   const synth = window.speechSynthesis;
-  const text = `Si esta es tu primera parada, bienvenido, estás a punto de conocer en profundidad un entorno único en el mundo. 
-    Si por el contrario esta es tu última parada, te invitamos a continuar con la escucha y así finalizar de la mejor manera posible esta visita.
-Nos encontramos en la Reserva Natural Especial de las Dunas de Maspalomas (C-7) y Zona Especial de Conservación Dunas de Maspalomas (ES7010007) un espacio ubicado en el sur de la isla de Gran Canaria, en la región macaronésica, cerca de la costa africana. La principal característica de este paraje natural es la presencia de dunas áridas. Se trata de un sistema móvil, cuya formación comienza a partir de las corrientes marinas, que depositan la arena en la orilla. Una vez que el sedimento se ha secado, el viento lo mueve hacia el interior. 
-En Playa del Inglés observamos numerosos ejemplares de balancón, una especie vegetal fundamental en el proceso de formación dunar. Esta planta sirve de obstáculo para la arena, haciendo que esta se acumule progresivamente a sotavento del arbusto hasta formar un montículo, la duna embrionaria. A medida que pasa el tiempo, el aporte continuo de arena genera una cola en esta duna embrionaria. La fusión de dos colas dunares procedentes de dos ejemplares de balancón cercanos produce una nueva formación conocida como duna de lengua (tongue dune). A medida que aumenta el aporte de arena, la duna de lengua comienza a alargarse, penetrando cada vez más en el interior del campo dunar. Finalmente, esta duna se desprende de los arbustos y avanza convertida en duna barján, la cual se caracteriza por tener forma de cresta con dos “cuernos” enfrentados que apuntan hacia la dirección del viento, dándole un aspecto de croissant. El conjunto de dunas barján conforman las cadenas barjanoides, que dan lugar al tan conocido campo de dunas móviles que observamos. Con todo lo citado, podemos afirmar que la Reserva en la que nos encontramos es un tipo de desierto único en el mundo que merece ser conservado.
-Para quién finaliza la visita, esperamos que hayas disfrutado de este maravilloso enclave y que te hayamos ayudado a conocer los valores naturales que alberga y que hacen de él un tesoro natural digno de conservar.
-Si estás comenzando, continúa por el sendero, te falta mucho por descubrir, para ello te recomendamos seguir escuchando las audio-guías que irás encontrando en las diferentes paradas mientras disfrutas del paisaje. 
-`;
-  const utterance = new SpeechSynthesisUtterance(text);
+  // const text = ``;
+  const text = document
+    .querySelector("#audio-guide")!
+    .getAttribute("data-audio");
+  const utterance = new SpeechSynthesisUtterance(text!);
   utterance.lang = "es-ES"; // Set the language to Spanish
   utterance.rate = 1; // Set the speech rate (1 is normal speed)
   utterance.pitch = 1; // Set the pitch (1 is normal pitch)

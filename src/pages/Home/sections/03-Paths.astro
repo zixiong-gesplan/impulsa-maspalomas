@@ -4,7 +4,7 @@ import Card from "@components/Card.astro";
 import { Leaf, LightbulbIcon, TreePalm } from "@lucide/astro";
 ---
 
-<section id="ejes" class="w-10/12 mx-auto">
+<section id="senderos" class="w-10/12 mx-auto">
   <div class="w-full">
     <div class="text-center mb-16">
       <Chip> Senderos </Chip>
@@ -24,25 +24,24 @@ import { Leaf, LightbulbIcon, TreePalm } from "@lucide/astro";
       <Card
         colors="border-t-amber-500"
         pathNumber="1"
-        title="Naturaleza vs Influencia Antropicas"
+        title="Dunas de biodiversidad"
         description="Esta ruta te llevará a descubrir la influencia de la actividad humana en el entorno natural de Maspalomas."
       >
         <Leaf class="text-amber-500 h-10 w-10" slot="icon" />
         <ul slot="list" class="text-sm text-muted-foreground mx-8 mb-4">
-            <li>
-                Distancia 2,3 km
-            </li>
-            <li>
-                Conecta el parque reserva Tony Gallardo con el Mirador Dunas
-            </li>
-            <li>
-                Atraviesa la zona de dunas estabilizadas donde se observan baleras, tarajales y ahulagas.
-            </li>
+          <li>Distancia 2,3 km</li>
+          <li>Conecta el parque reserva Tony Gallardo con el Mirador Dunas</li>
+          <li>
+            Atraviesa la zona de dunas estabilizadas donde se observan baleras,
+            tarajales y ahulagas.
+          </li>
         </ul>
-        <a 
+        <a
           slot="link"
-          href="#"
-          class="text-sm text-muted-foreground bg-amber-500 p-2 rounded-lg text-white">Adentrate en esta aventura</a>
+          href="/Sendero/1"
+          class="text-sm text-muted-foreground bg-amber-500 p-2 rounded-lg text-white"
+          >Adentrate en esta aventura</a
+        >
       </Card>
       <Card
         colors="border-t-yellow-500"
@@ -52,19 +51,19 @@ import { Leaf, LightbulbIcon, TreePalm } from "@lucide/astro";
       >
         <LightbulbIcon class="text-yellow-500 h-10 w-10" slot="icon" />
         <ul slot="list" class="text-sm text-muted-foreground mx-8 mb-4">
+          <li>Distancia 1,7 km</li>
           <li>
-              Distancia 1,7 km
+            Se puede contemplar numerosas dunas en distinto estado de evolución
+            asociadas a tarajales.
           </li>
-          <li>
-              Se puede contemplar numerosas dunas en distinto estado de evolución asociadas a tarajales.
-          </li>
-          <li>
-          </li>
+          <li></li>
         </ul>
-        <a 
+        <a
           slot="link"
           href="#"
-          class="text-sm text-muted-foreground bg-yellow-500 p-2 rounded-lg text-white">Adentrate en esta aventura</a>
+          class="text-sm text-muted-foreground bg-yellow-500 p-2 rounded-lg text-white"
+          >Adentrate en esta aventura</a
+        >
       </Card>
       <Card
         colors="border-t-blue-500"
@@ -75,19 +74,21 @@ import { Leaf, LightbulbIcon, TreePalm } from "@lucide/astro";
         <TreePalm class="text-blue-500 h-10 w-10" slot="icon" />
         <ul slot="list" class="text-sm text-muted-foreground mx-8 mb-4">
           <li>
-              3A) Distancia de 2,3 km. Sale del Mirador Dunas y llega a la Charca de Maspalomas, lugar de observación de aves.
+            3A) Distancia de 2,3 km. Sale del Mirador Dunas y llega a la Charca
+            de Maspalomas, lugar de observación de aves.
           </li>
           <li>
-              3B) Distancia de 1,5 km. Rodea la zona de máxima protección
-              y conecta con el parque reserva Tony Gallardo.
+            3B) Distancia de 1,5 km. Rodea la zona de máxima protección y
+            conecta con el parque reserva Tony Gallardo.
           </li>
-          <li>
-          </li>
+          <li></li>
         </ul>
-        <a 
-        slot="link"
-        href="#"
-          class="text-sm text-muted-foreground bg-blue-500 p-2 rounded-lg text-white">Adentrate en esta aventura</a>
+        <a
+          slot="link"
+          href="#"
+          class="text-sm text-muted-foreground bg-blue-500 p-2 rounded-lg text-white"
+          >Adentrate en esta aventura</a
+        >
       </Card>
     </div>
   </div>

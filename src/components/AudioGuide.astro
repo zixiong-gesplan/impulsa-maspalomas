@@ -1,7 +1,8 @@
 ---
 import Chip from "./Chip.astro";
-import Placeholder from "@assets/placeholder.svg";
 import SpeechAction from "./SpeechAction.astro";
+
+const { src, chip, title, description, audio } = Astro.props;
 ---
 
 <div
@@ -11,27 +12,23 @@ import SpeechAction from "./SpeechAction.astro";
     class="flex items-center justify-center bg-gray-100 rounded-lg mb-4 w-1/2"
   >
     <!-- <Placeholder class="h-full rounded-3xl" /> -->
-     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo5cWr-q8yhBp8eeY8W74eog3phMhlLDrxmw&s"
-        alt=""
-        class="object-cover aspect-square rounded-lg w-full h-full"  />
+    <img
+      src={src}
+      alt=""
+      class="object-cover aspect-square rounded-lg w-full h-full"
+    />
   </div>
+
   <div class="flex flex-col">
     <div class="flex flex-col items-start text-left gap-2 mb-4">
-      <Chip>Parada 0.</Chip>
-      <h3 class="text-2xl font-semibold">Mirador Dunas de Maspalomas</h3>
+      <Chip>{chip}</Chip>
+      <h3 class="text-2xl font-semibold">{title}</h3>
       <p class="text-sm text-gray-500 line-clamp-6">
-        Nos encontramos en la Reserva Natural Especial de las Dunas de
-        Maspalomas (C-7) y Zona Especial de Conservación Dunas de Maspalomas
-        (ES7010007) un espacio ubicado en el sur de la isla de Gran Canaria, en
-        la región macaronésica, cerca de la costa africana. La principal
-        característica de este paraje natural es la presencia de dunas áridas.
-        Se trata de un sistema móvil, cuya formación comienza a partir de las
-        corrientes marinas, que depositan la arena en la orilla. Una vez que el
-        sedimento se ha secado, el viento lo mueve hacia el interior.
+        {description}
       </p>
     </div>
     <div class="flex flex-col sm:flex-row gap-4 mb-4">
-      <SpeechAction />
+      <SpeechAction audio={audio} />
     </div>
   </div>
 </div>
