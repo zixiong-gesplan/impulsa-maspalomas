@@ -1,0 +1,22 @@
+---
+
+const { url,label } = Astro.props;
+---
+
+<a
+href={url}
+class="flex flex-col items-center gap-2 text-2xl font-semibold text-gray-800 hover:text-gray-600"
+>
+<svg
+  width="47"
+  height="55"
+  viewBox="0 0 47 55"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M25.5841 52.9599C24.8989 54.5959 22.5812 54.5966 21.895 52.961L0.882686 2.87718C0.329848 1.55947 1.29733 0.103882 2.72632 0.103431L44.7194 0.0901689C46.1484 0.0897177 47.1168 1.54469 46.5648 2.86275L25.5841 52.9599Z"
+    fill="#FD2626"></path>
+  <text x="17" y="25" fill="white">{label}</text>
+</svg>
+</a>

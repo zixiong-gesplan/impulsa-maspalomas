@@ -1,0 +1,79 @@
+---
+import type { GetStaticPaths } from "astro";
+import PathLayout from "@layouts/PathLayout.astro";
+import {AudioGuide} from "@components/AudioGuide";
+
+import { STANDS } from "@consts/STANDS";
+import FlagLink from "@components/FlagLink.astro";
+
+const { parada } = Astro.params;
+
+const stand = STANDS.find((stand) => stand.id === parada);
+if (!stand) return Astro.redirect("/404");
+export const getStaticPaths = (() => {
+  return STANDS.map((stand) => ({
+    params: { parada: stand.id },
+  }));
+}) satisfies GetStaticPaths;
+---
+
+<PathLayout {...stand.path}>
+  <div class="w-10/12 mx-auto mb-16">
+    <AudioGuide
+      {...stand}
+    />
+  </div>
+
+  <div class="w-10/12 mx-auto mb-16 flex justify-between items-center">
+    <FlagLink {...stand.prev}/>
+    <svg
+      viewBox="0 0 190 33"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class="w-full"
+    >
+      <path
+        class="w-full"
+        d="M0.5 21.5003C0.5 21.5003 44 15.5 50 27.0003C56 38.5006 85 27.0003 125.5 7.50029C166 -11.9997 189.5 21.5003 189.5 21.5003"
+        stroke="#AFAFAF"
+        stroke-linecap="round"
+        stroke-dasharray="2 2"></path>
+    </svg>
+
+    <div
+      class="flex flex-col items-center gap-2 text-2xl font-semibold text-gray-800 hover:text-gray-600"
+    >
+      <svg
+        width="47"
+        height="55"
+        viewBox="0 0 47 55"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M25.5841 52.9599C24.8989 54.5959 22.5812 54.5966 21.895 52.961L0.882686 2.87718C0.329848 1.55947 1.29733 0.103882 2.72632 0.103431L44.7194 0.0901689C46.1484 0.0897177 47.1168 1.54469 46.5648 2.86275L25.5841 52.9599Z"
+          fill="#FD2626"></path>
+        <text x="17" y="25" fill="white">{stand.label}</text>
+      </svg>
+    </div>
+
+    {
+      !stand.next ? <span></span>:
+      <svg
+      viewBox="0 0 190 33"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class="w-full"
+    >
+      <path
+        d="M0.5 21.5003C0.5 21.5003 44 15.5 50 27.0003C56 38.5006 85 27.0003 125.5 7.50029C166 -11.9997 189.5 21.5003 189.5 21.5003"
+        stroke="#AFAFAF"
+        stroke-linecap="round"
+        stroke-dasharray="2 2"></path>
+    </svg>
+    <FlagLink {...stand.next}/>
+    }
+
+
+  </div>
+</PathLayout>
