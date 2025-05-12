@@ -1,0 +1,38 @@
+---
+import { AudioGuide } from "@components/AudioGuide";
+import { STAND_0 } from "@consts/STANDS";
+---
+
+<section id="proyecto" class="px-8 py-10 w-10/12 mx-auto">
+  <div class="flex flex-col md:flex-row gap-4 mb-8">
+    <img
+      src="/src/assets/Mapa.png"
+      alt="Senderos de Maspalomas"
+      class="w-1/2 h-auto mb-8 rounded-lg shadow-lg mx-auto"
+    />
+    <div
+      class="rounded-lg p-8 mb-8 bg-sky-300 w-1/2 shadow-lg text-white font-semibold"
+    >
+      <p class="">
+        Los tres senderos <span class="text-yellow-200 font-semibold"
+          >SL05SB</span
+        > son de corta distancia y escaso desnivel a superar, aunque al discurrir
+        fundamentalmente por arena suelta puede resultar algo fatigoso. Se considera
+        una ruta de
+        <span class="text-yellow-200 font-semibold shadow-2xl"
+          >baja dificultad</span
+        >. A lo largo de los tres senderos se puede admirar una de las estampas
+        paisajísticas más espectaculares de la isla, ya que se observa la cumbre
+        y la forma en escudo de la isla primigenia, divisándose incluso el Roque
+        Nublo en contraposición al paisaje árido dunar en primer plano. Para su
+        realización se recomienda evitar las horas centrales del día, dado el
+        intenso calor al que se está sometido, a pesar de ser senderos muy
+        frecuentado a cualquier hora del día.
+      </p>
+    </div>
+  </div>
+
+  <!--  -->
+
+  <AudioGuide {...STAND_0} />
+</section>
