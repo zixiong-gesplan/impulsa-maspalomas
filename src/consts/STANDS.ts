@@ -312,7 +312,7 @@ export const STAND_3_1: Stand = {
   chip: "Parada 1",
   title: "Oasis de vida: un tesoro entre dunas",
   description: `Desde este punto observamos un campo de dunas áridas cuya dinámica depende del viento. La acción de éste en la arena favorece la aparición de “rizaduras”...`,
-  audio: `Desde este punto observamos un campo de dunas áridas cuya dinámica depende del viento. La acción de éste en la arena favorece la aparición de “rizaduras”...`,
+  audio: `Desde este punto observamos un campo de dunas áridas cuya dinámica depende del viento. La acción de éste en la arena favorece la aparición de “rizaduras”.`,
   path: PATH_3,
   next: {
     label: "2",

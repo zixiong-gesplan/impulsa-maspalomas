@@ -55,12 +55,13 @@ const { audio } = Astro.props;
     .addEventListener("click", stopAudio);
 
   function playAudio() {
-    synth.speak(utterance);
     // Check if the audio is playing
     if (synth.speaking) {
       console.log("Audio is playing");
     } else {
       console.log("Audio is not playing");
+      synth.speak(utterance);
+
     }
     // Return a message or perform any other action if needed
     // For example, you can return a message to indicate that the audio is playing
