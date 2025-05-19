@@ -2,7 +2,7 @@
   "name": "impulsa-masdunas",
   "type": "module",
   "version": "0.0.1",
-  "packageManager": "pnpm",
+  "packageManager": "pnpm@9.10.0",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -21,7 +21,7 @@
   "dependencies": {
     "@lucide/astro": "^0.507.0",
     "@tailwindcss/vite": "^4.1.4",
-    "astro": "^5.7.8",
+    "astro": "^5.7.13",
     "tailwindcss": "^4.1.4",
     "tailwindcss-animated": "^2.0.0"
   },

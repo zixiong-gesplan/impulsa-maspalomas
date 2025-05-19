@@ -28,11 +28,11 @@ export const STAND_1_1: Stand = {
   path: PATH_1,
   next: {
     label: "2",
-    url: "/parada-1-2",
+    url: "/impulsa-maspalomas/parada-1-2",
   },
   prev: {
     label: "0",
-    url: "/",
+    url: "/impulsa-maspalomas",
   },
 };
 
@@ -50,11 +50,11 @@ export const STAND_1_2: Stand = {
   path: PATH_1,
   next:{
     label: "3",
-    url: "/parada-1-3",
+    url: "/impulsa-maspalomas/parada-1-3",
   },
   prev: {
     label: "1",
-    url: "/parada-1-1",
+    url: "/impulsa-maspalomas/parada-1-1",
   },
 };
 
@@ -70,11 +70,11 @@ export const STAND_1_3: Stand = {
   path: PATH_1,
   next: {
     label: "4",
-    url: "/parada-1-4",
+    url: "/impulsa-maspalomas/parada-1-4",
   },
   prev: {
     label: "2",
-    url: "/parada-1-2",
+    url: "/impulsa-maspalomas/parada-1-2",
   },
 };
 
@@ -90,11 +90,11 @@ export const STAND_1_4: Stand = {
   path: PATH_1,
   next: {
     label: "5",
-    url: "/parada-1-5",
+    url: "/impulsa-maspalomas/parada-1-5",
   },
   prev: {
     label: "3",
-    url: "/parada-1-3",
+    url: "/impulsa-maspalomas/parada-1-3",
   },
 };
 
@@ -110,11 +110,11 @@ export const STAND_1_5: Stand = {
   path: PATH_1,
   next: {
     label: "6",
-    url: "/parada-1-6"
+    url: "/impulsa-maspalomas/parada-1-6"
   },
   prev:{
     label: "4",
-    url: "/parada-1-4"
+    url: "/impulsa-maspalomas/parada-1-4"
   }
 };
 
@@ -130,11 +130,11 @@ export const STAND_1_6: Stand = {
   path: PATH_1,
   next: {
     label: "7",
-    url: "/parada-1-7",
+    url: "/impulsa-maspalomas/parada-1-7",
   },
   prev: {
     label: "5",
-    url: "/parada-1-5",
+    url: "/impulsa-maspalomas/parada-1-5",
   },
 };
 
@@ -151,7 +151,7 @@ export const STAND_1_7: Stand = {
   next: null,
   prev: {
     label: "6",
-    url: "/parada-1-6",
+    url: "/impulsa-maspalomas/parada-1-6",
   },
 };
 
@@ -173,11 +173,11 @@ Y es que un desierto es uno de los mejores escenarios para dejarnos sorprender p
   path: PATH_2,
   next: {
     label: "2",
-    url: "/parada-2-2",
+    url: "/impulsa-maspalomas/parada-2-2",
   },
   prev: {
     label: "0",
-    url: "/",
+    url: "/impulsa-maspalomas",
   },
 };
 export const STAND_2_2: Stand = {
@@ -192,11 +192,11 @@ export const STAND_2_2: Stand = {
   path: PATH_2,
   next: {
     label: "3",
-    url: "/parada-2-3",
+    url: "/impulsa-maspalomas/parada-2-3",
   },
   prev: {
     label: "1",
-    url: "/parada-2-1",
+    url: "/impulsa-maspalomas/parada-2-1",
   },
 };
 
@@ -218,11 +218,11 @@ export const STAND_2_3: Stand = {
   path: PATH_2,
   prev: {
     label: "2",
-    url: "/parada-2-2"
+    url: "/impulsa-maspalomas/parada-2-2"
   },
   next:{
     label:"4",
-    url:"/parada-2-4"
+    url:"/impulsa-maspalomas/parada-2-4"
   }
 };
 
@@ -238,11 +238,11 @@ export const STAND_2_4: Stand = {
   path: PATH_2,
   next: {
     label: "5",
-    url: "/parada-2-5",
+    url: "/impulsa-maspalomas/parada-2-5",
   },
   prev: {
     label: "3",
-    url: "/parada-2-3",
+    url: "/impulsa-maspalomas/parada-2-3",
   },
 };
 
@@ -258,11 +258,11 @@ export const STAND_2_5: Stand = {
   path: PATH_2,
   next: {
     label: "6",
-    url: "/parada-2-6",
+    url: "/impulsa-maspalomas/parada-2-6",
   },
   prev: {
     label: "4",
-    url: "/parada-2-4",
+    url: "/impulsa-maspalomas/parada-2-4",
   },
 };
 
@@ -279,11 +279,11 @@ export const STAND_2_6: Stand = {
   path: PATH_2,
   next: {
     label: "7",
-    url: "/parada-2-7",
+    url: "/impulsa-maspalomas/parada-2-7",
   },
   prev: {
     label: "5",
-    url: "/parada-2-5",
+    url: "/impulsa-maspalomas/parada-2-5",
   },
 };
 
@@ -300,7 +300,7 @@ export const STAND_2_7: Stand = {
   next: null,
   prev: {
     label: "6",
-    url: "/parada-2-6",
+    url: "/impulsa-maspalomas/parada-2-6",
   },
 };
 
@@ -316,11 +316,11 @@ export const STAND_3_1: Stand = {
   path: PATH_3,
   next: {
     label: "2",
-    url: "/parada-3-2",
+    url: "/impulsa-maspalomas/parada-3-2",
   },
   prev: {
     label: "0",
-    url: "/",
+    url: "/impulsa-maspalomas",
   },
 };
 
@@ -336,11 +336,11 @@ export const STAND_3_2: Stand = {
   path: PATH_3,
   next: {
     label: "3",
-    url: "/parada-3-3",
+    url: "/impulsa-maspalomas/parada-3-3",
   },
   prev: {
     label: "1",
-    url: "/parada-3-1",
+    url: "/impulsa-maspalomas/parada-3-1",
   },
 };
 
@@ -356,11 +356,11 @@ export const STAND_3_3: Stand = {
   path: PATH_3,
   next: {
     label: "4",
-    url: "/parada-3-4",
+    url: "/impulsa-maspalomas/parada-3-4",
   },
   prev: {
     label: "2",
-    url: "/parada-3-2",
+    url: "/impulsa-maspalomas/parada-3-2",
   },  
 };
 
@@ -376,11 +376,11 @@ export const STAND_3_4: Stand = {
   path: PATH_3,
   next: {
     label: "5A",
-    url: "/parada-3-5a",
+    url: "/impulsa-maspalomas/parada-3-5a",
   },
   prev: {
     label: "3",
-    url: "/parada-3-3",
+    url: "/impulsa-maspalomas/parada-3-3",
   },
 };
 
@@ -397,11 +397,11 @@ export const STAND_3_5A: Stand = {
   path: PATH_3,
   next: {
     label: "6",
-    url: "/parada-3-6",
+    url: "/impulsa-maspalomas/parada-3-6",
   },
   prev: {
     label: "4",
-    url: "/parada-3-4",
+    url: "/impulsa-maspalomas/parada-3-4",
   },
 };
 
@@ -418,7 +418,7 @@ export const STAND_3_5B: Stand = {
   next: null,
   prev: {
     label: "4",
-    url: "/parada-3-4",
+    url: "/impulsa-maspalomas/parada-3-4",
   },
 };
 
@@ -435,7 +435,7 @@ export const STAND_3_6: Stand = {
   next: null,
   prev: {
     label: "5",
-    url: "/parada-3-5a",
+    url: "/impulsa-maspalomas/parada-3-5a",
   },
 };
 
