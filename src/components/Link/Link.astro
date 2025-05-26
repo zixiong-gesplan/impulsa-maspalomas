@@ -1,15 +1,15 @@
 ---
 import { cva } from "class-variance-authority";
-const link = cva("link", {
+const link = cva("text-white border rounded-md  font-medium transition-colors flex items-center justify-center cursor-pointer", {
     variants: {
         color: {
-            amber: "bg-amber-500 hover:bg-amber-600 text-white border rounded-md px-4 py-2 text-base font-medium transition-colors flex items-center justify-center cursor-pointer",
-            yellow: "bg-yellow-500 hover:bg-yellow-600 text-white border rounded-md px-4 py-2 text-base font-medium transition-colors flex items-center justify-center cursor-pointer",
-            blue: "bg-blue-500 hover:bg-blue-600 text-white border rounded-md px-4 py-2 text-base font-medium transition-colors flex items-center justify-center cursor-pointer"
+            amber: "bg-amber-500 hover:bg-amber-600",
+            yellow: "bg-yellow-500 hover:bg-yellow-600",
+            blue: "bg-blue-500 hover:bg-blue-600"
         },
         size: {
-            default: "text-base",
-            small: "text-sm",
+            default: "text-base px-4 py-2",
+            small: "text-sm px-2 py-1",
         },
     },
 });

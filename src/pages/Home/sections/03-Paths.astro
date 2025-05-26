@@ -2,7 +2,6 @@
 import {Chip} from "@components/Chip";
 import {Card} from "@components/Card";
 import { Leaf, LightbulbIcon, TreePalm } from "@lucide/astro";
-import { Link } from "@components/Link";
 ---
 
 <section id="senderos" class="w-10/12 mx-auto">
@@ -23,9 +22,9 @@ import { Link } from "@components/Link";
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto p-8"
     >
       <Card
-        borderColor="border-t-amber-500"
+        color="amber"
         pathNumber="1"
-        title="Dunas de biodiversidad"
+        label="Dunas de biodiversidad"
         description="Esta ruta te llevará a descubrir la influencia de la actividad humana en el entorno natural de Maspalomas."
       >
         <Leaf class="text-amber-500 h-10 w-10" slot="icon" />
@@ -37,26 +36,11 @@ import { Link } from "@components/Link";
             tarajales y ahulagas.
           </li>
         </ul>
-        <!-- <a
-          slot="link"
-          href="/impulsa-maspalomas/parada-1-1"
-          class="text-sm text-muted-foreground bg-amber-500 p-2 rounded-lg text-white"
-          ></a
-        > -->
-
-        <Link
-          href="/impulsa-maspalomas/parada-1-1"
-          color="amber"
-          slot="link"
-          size="default"
-        >
-          Adentrate en esta aventura
-        </Link>
       </Card>
       <Card
-        borderColor="border-t-yellow-500"
+        color="yellow"
         pathNumber="2"
-        title="La vida oculta de las dunas de Maspalomas"
+        label="La vida oculta de las dunas de Maspalomas"
         description="Explora la fauna entre las dunas y descubre la vida que se esconde en este ecosistema único."
       >
         <LightbulbIcon class="text-yellow-500 h-10 w-10" slot="icon" />
@@ -68,24 +52,11 @@ import { Link } from "@components/Link";
           </li>
           <li></li>
         </ul>
-        <!-- <a
-          slot="link"
-          href="parada-2-1"
-          class="text-sm text-muted-foreground bg-yellow-500 p-2 rounded-lg text-white"
-          >Adentrate en esta aventura</a
-        > -->
-        <Link  
-          href="/impulsa-maspalomas/parada-2-1"
-          color="yellow"
-          slot="link"
-          size="default">
-          Adentrate en esta aventura
-        </Link>
       </Card>
       <Card
-        borderColor="border-t-blue-500"
+        color="blue"
         pathNumber="3"
-        title="Oasis de vida"
+        label="Oasis de vida"
         description="Sumérgete en la belleza de la flora y fauna de Maspalomas, un oasis de vida en el desierto."
       >
         <TreePalm class="text-blue-500 h-10 w-10" slot="icon" />
@@ -100,13 +71,6 @@ import { Link } from "@components/Link";
           </li>
           <li></li>
         </ul>
-        <Link  
-          href="/impulsa-maspalomas/parada-3-1"
-          color="blue"
-          slot="link"
-          size="default">
-          Adentrate en esta aventura
-        </Link>
       </Card>
     </div>
   </div>

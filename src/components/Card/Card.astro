@@ -1,19 +1,46 @@
 ---
-const { borderColor, pathNumber, title, description } = Astro.props;
+import { Link } from "@components/Link";
+import { cva } from "class-variance-authority";
+
+const card = cva("border-t-4  rounded-lg shadow-md bg-white", {
+  variants: {
+    color: {
+      amber: "border-amber-500",
+      yellow: "border-yellow-500",
+      blue: "border-blue-500",
+    },
+  },
+  defaultVariants: {
+    color: "amber",
+  },
+});
+
+const title = cva(
+  "text-2xl font-semibold leading-none tracking-tight", {
+  variants: {
+    color: {
+      amber: "text-amber-500",
+      yellow: "text-yellow-500",
+      blue: "text-blue-500",
+    },
+  }
+});
+
+const { color, pathNumber, label, description } = Astro.props;
 ---
 
-<div class=`rounded-lg shadow-md bg-white border-t-4 ${borderColor}`>
+<div class={card({ color })}>
   <div class="flex flex-col space-y-1.5 p-6 content-between">
     <div class="flex flex-row items-center gap-2">
       <slot name="icon" />
       <h4
-        class="text-xl font-semibold text-gray-500 leading-none tracking-tight"
-      >
+        class={title({ color })}
+        >
         Sendero {pathNumber}
       </h4>
     </div>
     <h3 class="text-2xl font-semibold leading-none tracking-tight">
-      {title}
+      {label}
     </h3>
 
     <p class="text-sm text-muted-foreground">
@@ -21,6 +48,13 @@ const { borderColor, pathNumber, title, description } = Astro.props;
     </p>
 
     <slot name="list" />
-    <slot name="link" />
+    <Link
+      href=`/impulsa-maspalomas/parada-${pathNumber}-1`
+      color={color}
+      slot="link"
+      size="default"
+    >
+      Adentrate en esta aventura
+    </Link>
   </div>
 </div>
