@@ -1,5 +1,6 @@
 ---
 import Breadcrums from "@components/Breadcrums/Breadcrums.astro";
+import Button from "@components/Button/Button.astro";
 import Layout from "@layouts/Layout.astro";
 import { Download, Share2 } from "@lucide/astro";
 
@@ -20,17 +21,20 @@ const { src, title, description, id } = Astro.props;
           {title}
         </h2>
         <div class="flex">
-          <button
+          <!-- <button
             class="my-2 px-4 py-2 bg-amber-800 text-white rounded-lg hover:bg-amber-700 transition-colors w-full font-bold flex items-center justify-center gap-2 border-4 border-amber-800 hover:border-amber-700"
           >
             <Download />
             Descargar
-          </button>
-
-          <button class="my-2 px-4 py-2 text-amber-800 rounded-lg border-2 border-amber-800 transition-colors w-full font-bold flex items-center justify-center gap-2 ml-4">
+          </button> -->
+          <Button type="primary" size="default">
+            <Download />
+            Descargar
+          </Button>
+          <Button type="secondary" size="default">
             <Share2 />
             Compartir
-          </button>
+          </Button>
         </div>
 
 

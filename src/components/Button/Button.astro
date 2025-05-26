@@ -1,0 +1,33 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { cva, type VariantProps } from "class-variance-authority";
+
+const button = cva("button",{
+    variants:{
+        type:{
+            primary: " bg-amber-500 text-white rounded-lg hover:bg-amber-700 transition-colors w-full font-bold flex items-center justify-center gap-2 border-4 border-amber-500 hover:border-amber-700 cursor-pointer",
+            secondary: "text-amber-500 rounded-lg border-2 border-amber-500 transition-colors w-full font-bold flex items-center justify-center gap-2 ml-4 cursor-pointer",
+        },
+        size:{
+            default: "my-2 px-4 py-2"
+        }
+    }
+})
+
+const {
+    type = "primary",
+    size = "default",
+    ...props
+} = Astro.props;
+---
+
+
+<button
+    class={button({
+        type,
+        size
+    })}
+    {...props}
+>
+    <slot />
+</button>
