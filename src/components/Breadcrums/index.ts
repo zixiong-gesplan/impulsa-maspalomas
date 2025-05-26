@@ -1,0 +1,1 @@
+export { default as Breadcrums } from "./Breadcrums.astro";
