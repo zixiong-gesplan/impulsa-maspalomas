@@ -1,0 +1,31 @@
+---
+import { cva } from "class-variance-authority";
+const link = cva("link", {
+    variants: {
+        color: {
+            amber: "bg-amber-500 hover:bg-amber-600 text-white border rounded-md px-4 py-2 text-base font-medium transition-colors flex items-center justify-center cursor-pointer",
+            yellow: "bg-yellow-500 hover:bg-yellow-600 text-white border rounded-md px-4 py-2 text-base font-medium transition-colors flex items-center justify-center cursor-pointer",
+            blue: "bg-blue-500 hover:bg-blue-600 text-white border rounded-md px-4 py-2 text-base font-medium transition-colors flex items-center justify-center cursor-pointer"
+        },
+        size: {
+            default: "text-base",
+            small: "text-sm",
+        },
+    },
+});
+
+const {
+    color = "amber",
+    size = "default",
+    ...props
+} = Astro.props;
+---
+<a 
+    class={link({
+        color,
+        size
+    })}
+    {...props}
+>
+    <slot />
+</a>
