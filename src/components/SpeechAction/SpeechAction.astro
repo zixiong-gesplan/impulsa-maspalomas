@@ -1,4 +1,5 @@
 ---
+import Button from "@components/Button/Button.astro";
 import { PlayCircle, Repeat, StopCircle } from "@lucide/astro";
 const { audio } = Astro.props;
 ---
@@ -8,31 +9,34 @@ const { audio } = Astro.props;
   data-audio={audio}
   id="audio-guide"
 >
-  <button
-    class="bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-md text-base font-medium transition-colors flex items-center justify-center cursor-pointer"
+  <Button
+    type="primary"
+    size="default"
+    aria-label="Repetir audioguía"
     data-action="repeat"
   >
     <Repeat class="h-8 w-8" />
-  </button>
-
-  <button
-    class="bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-md text-base font-medium transition-colors flex items-center justify-center cursor-pointer"
+  </Button>
+  <Button
+    type="primary"
+    size="default"
     aria-label="Reproducir audioguía"
     data-action="play"
   >
     <PlayCircle class="h-8 w-8" />
-  </button>
-  <button
-    class="bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-md text-base font-medium transition-colors flex items-center justify-center cursor-pointer"
+  </Button>
+  <Button
+    type="primary"
+    size="default"
+    aria-label="Detener audioguía"
     data-action="stop"
   >
     <StopCircle class="h-8 w-8" />
-  </button>
+  </Button>
 </div>
 
 <script>
   const synth = window.speechSynthesis;
-  // const text = ``;
   const text = document
     .querySelector("#audio-guide")!
     .getAttribute("data-audio");
@@ -46,9 +50,12 @@ const { audio } = Astro.props;
     if (synth.speaking) {
       synth.cancel(); // Stop the speech synthesis
       console.log("Audio stopped");
-    } else {
-      console.log("No audio is playing to stop");
+      return;
     }
+
+    console.log("No audio is playing to stop");
+    return;
+  
   }
   document
     .querySelector('button[data-action="stop"]')!
