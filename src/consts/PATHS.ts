@@ -20,3 +20,9 @@ export const PATH_3: Path = {
   description: `Este sendero es el más largo de todos, y está dividido en dos senderos: el 3A, que sale del Mirados Dunas y llega a la Charca de Maspalomas; el 3B, que rodea la zona de máxima protección y conecta con el Parque Reserva Tony Gallardo.`,
   guide: {},
 };
+
+export const PATHS: Path[] = [
+  PATH_1,
+  PATH_2,
+  PATH_3,
+];
