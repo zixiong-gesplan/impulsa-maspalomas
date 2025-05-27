@@ -1,1 +1,1 @@
-export { default as AudioGuide } from "./AudioGuide.astro";
+export { default as AudioGuide } from './AudioGuide.astro';

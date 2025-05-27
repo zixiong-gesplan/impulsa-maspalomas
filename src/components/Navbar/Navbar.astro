@@ -1,14 +1,15 @@
 ---
-import Logo from "@assets/logo.svg";
+import Logo from '@assets/logo.svg';
+import { ASSETS } from '@consts/ASSETS';
 ---
 
 <header
-  class="flex flex-col items-center gap-2 sticky top-0 z-50 w-full shadow-md bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 transition-colors duration-300 ease-in-out"
+    class="flex flex-col items-center gap-2 sticky top-0 z-50 w-full shadow-md bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 transition-colors duration-300 ease-in-out"
 >
-  <a href="https://masdunas.es/" target="_blank" rel="noopener noreferrer">
-    <img src="/impulsa-maspalomas/header-masdunas.png" class="w-full" alt="" />
-  </a>
-  <a href="/impulsa-maspalomas">
-    <Logo class="h-8 md:h-12" />
-  </a>
+    <a href="https://masdunas.es/" target="_blank" rel="noopener noreferrer">
+        <img src={ASSETS.HEADER_MASDUNAS} class="w-full" alt="" />
+    </a>
+    <a href="/impulsa-maspalomas">
+        <Logo class="h-8 md:h-12" />
+    </a>
 </header>
