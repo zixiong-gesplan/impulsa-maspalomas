@@ -22,12 +22,6 @@ const { src, title, description, id } = Astro.props;
                     {title}
                 </h2>
                 <div class="flex">
-          <!-- <button
-            class="my-2 px-4 py-2 bg-amber-800 text-white rounded-lg hover:bg-amber-700 transition-colors w-full font-bold flex items-center justify-center gap-2 border-4 border-amber-800 hover:border-amber-700"
-          >
-            <Download />
-            Descargar
-          </button> -->
           <Button type="primary" size="default">
               <Download />
               Descargar
@@ -54,51 +48,58 @@ const { src, title, description, id } = Astro.props;
                 </p>
             </div>
         </div>
-        <div class="w-full md:w-1/2 mx-auto mb-16 flex gap-4 items-center justify-center">
+        <div class="w-full md:w-1/2 mx-auto mb-16 flex gap-4 items-center justify-center flex-col-reverse md:flex-row">
             <div class="">
                 <h4 class="text-2xl font-bold mb-4 text-center">
                     Estadísticas del recorrido
                 </h4>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="bg-white p-4 rounded-lg shadow flex gap-2">
-                        <img src={ASSETS.LENGTH} alt="Distancia" />
-                        <div>
-                            <h5 class="text-lg font-semibold">Distancia</h5>
-                            <p class="text-gray-600">2,3 km</p>
+                <div class="grid grid-cols-1 sm:grid-cols-4 md:grid-cols-2 gap-4">
+                    <div class="bg-white p-4 rounded-lg shadow flex gap-2 flex-col lg:flex-row">
+                        <img src={ASSETS.LENGTH} alt="Distancia" class="w-10 h-10 mx-auto" />
+                        <div class="flex flex-col justify-center">
+                            <h5 class="text-base lg:text-lg font-semibold text-center lg:text-left">Distancia</h5>
+                            <p class="text-gray-600 text-center lg:text-left">2,3 km</p>
                         </div>
                     </div>
-                    <div class="bg-white p-4 rounded-lg shadow flex gap-2">
-                        <img src={ASSETS.TIME} alt="Distancia" />
-                        <div>
-                            <h5 class="text-lg font-semibold">Duración</h5>
-                            <p class="text-gray-600">2 horas</p>
+                    <div class="bg-white p-4 rounded-lg shadow flex gap-2 flex-col lg:flex-row">
+                        <img src={ASSETS.TIME} alt="Duración" class="w-10 h-10 mx-auto" />
+                        <div class="flex flex-col justify-center">
+                            <h5 class="text-base lg:text-lg font-semibold text-center lg:text-left">Duración</h5>
+                            <p class="text-gray-600 text-center lg:text-left">2 horas</p>
                         </div>
                     </div>
-                    <div class="bg-white p-4 rounded-lg shadow flex gap-2">
-                        <img src={ASSETS.DIFFICULTY} alt="Distancia" />
-                        <div>
-                            <h5 class="text-lg font-semibold">Dificultad</h5>
-                            <p class="text-gray-600">Fácil</p>
+                    <div class="bg-white p-4 rounded-lg shadow flex gap-2 flex-col lg:flex-row">
+                        <img src={ASSETS.DIFFICULTY} alt="Dificultad" class="w-10 h-10 mx-auto" />
+                        <div class="flex flex-col justify-center">
+                            <h5 class="text-base lg:text-lg font-semibold text-center lg:text-left">Dificultad</h5>
+                            <p class="text-gray-600 text-center lg:text-left">Fácil</p>
                         </div>
                     </div>
-                    <div class="bg-white p-4 rounded-lg shadow flex gap-2">
-                        <img src={ASSETS.MAXIMUM_FEE} alt="Desnivel" />
-                        <div>
-                            <h5 class="text-lg font-semibold">Desnivel</h5>
-                            <p class="text-gray-600">50 m</p>
+                    <div class="bg-white p-4 rounded-lg shadow flex gap-2 flex-col lg:flex-row">
+                        <img src={ASSETS.MAXIMUM_FEE} alt="Desnivel" class="w-10 h-10 mx-auto" />
+                        <div class="flex flex-col justify-center">
+                            <h5 class="text-base lg:text-lg font-semibold text-center lg:text-left">Desnivel</h5>
+                            <p class="text-gray-600 text-center lg:text-left">50 m</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="flex justify-between items-center mt-4">
-                <img
-                    src={ASSETS.DUNIA.POINTING}
-                    alt="Dunia de Balancón"
-                    class="w-auto h-56"
-                    loading="lazy"
-                    decoding="async"
-                />
+                <picture>
+                    <source
+                        srcset={ASSETS.DUNIA.DEFAULT}
+                        media="(max-width: 768px)"
+                    />
+                    <img
+                        src={ASSETS.DUNIA.POINTING}
+                        alt="Dunia de Balancón"
+                        class="w-auto h-56"
+                        loading="lazy"
+                        decoding="async"
+                    />
+                </picture>
+
             </div>
         </div>
 
