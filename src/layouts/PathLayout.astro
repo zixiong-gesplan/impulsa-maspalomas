@@ -1,6 +1,7 @@
 ---
 import Breadcrums from '@components/Breadcrums/Breadcrums.astro';
 import Button from '@components/Button/Button.astro';
+import StadisticCard from '@components/StadisticCard/StadisticCard.astro';
 import { ASSETS } from '@consts/ASSETS';
 import Layout from '@layouts/Layout.astro';
 import { Download, Share2 } from '@lucide/astro';
@@ -21,15 +22,15 @@ const { src, title, description, id } = Astro.props;
                 >
                     {title}
                 </h2>
-                <div class="flex">
-          <Button type="primary" size="default">
-              <Download />
-              Descargar
-          </Button>
-          <Button type="secondary" size="default">
-              <Share2 />
-              Compartir
-          </Button>
+                <div class="flex flex-col sm:flex-row sm:gap-4">
+                    <Button type="primary" size="default">
+                        <Download />
+                        Descargar
+                    </Button>
+                    <Button type="secondary" size="default">
+                        <Share2 />
+                        Compartir
+                    </Button>
                 </div>
 
                 <img
@@ -54,34 +55,30 @@ const { src, title, description, id } = Astro.props;
                     Estadísticas del recorrido
                 </h4>
                 <div class="grid grid-cols-1 sm:grid-cols-4 md:grid-cols-2 gap-4">
-                    <div class="bg-white p-4 rounded-lg shadow flex gap-2 flex-col lg:flex-row">
-                        <img src={ASSETS.LENGTH} alt="Distancia" class="w-10 h-10 mx-auto" />
-                        <div class="flex flex-col justify-center">
-                            <h5 class="text-base lg:text-lg font-semibold text-center lg:text-left">Distancia</h5>
-                            <p class="text-gray-600 text-center lg:text-left">2,3 km</p>
-                        </div>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow flex gap-2 flex-col lg:flex-row">
-                        <img src={ASSETS.TIME} alt="Duración" class="w-10 h-10 mx-auto" />
-                        <div class="flex flex-col justify-center">
-                            <h5 class="text-base lg:text-lg font-semibold text-center lg:text-left">Duración</h5>
-                            <p class="text-gray-600 text-center lg:text-left">2 horas</p>
-                        </div>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow flex gap-2 flex-col lg:flex-row">
-                        <img src={ASSETS.DIFFICULTY} alt="Dificultad" class="w-10 h-10 mx-auto" />
-                        <div class="flex flex-col justify-center">
-                            <h5 class="text-base lg:text-lg font-semibold text-center lg:text-left">Dificultad</h5>
-                            <p class="text-gray-600 text-center lg:text-left">Fácil</p>
-                        </div>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow flex gap-2 flex-col lg:flex-row">
-                        <img src={ASSETS.MAXIMUM_FEE} alt="Desnivel" class="w-10 h-10 mx-auto" />
-                        <div class="flex flex-col justify-center">
-                            <h5 class="text-base lg:text-lg font-semibold text-center lg:text-left">Desnivel</h5>
-                            <p class="text-gray-600 text-center lg:text-left">50 m</p>
-                        </div>
-                    </div>
+                    <StadisticCard
+                        src={ASSETS.LENGTH}
+                        alt="Distancia"
+                        value="2,3 km"
+                        label="Distancia"
+                    />
+                    <StadisticCard
+                        src={ASSETS.TIME}
+                        alt="Duración"
+                        value="2 horas"
+                        label="Duración"
+                    />
+                    <StadisticCard
+                        src={ASSETS.DIFFICULTY}
+                        alt="Dificultad"
+                        value="Fácil"
+                        label="Dificultad"
+                    />
+                    <StadisticCard
+                        src={ASSETS.MAXIMUM_FEE}
+                        alt="Desnivel"
+                        value="50 m"
+                        label="Desnivel"
+                    />
                 </div>
             </div>
 
