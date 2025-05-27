@@ -3,6 +3,7 @@ export const ASSETS = {
     MINIMUN_FEE: '/impulsa-maspalomas/cota_minima.png',
     MAXIMUM_FEE: '/impulsa-maspalomas/cota_maxima.png',
     DIFFICULTY: '/impulsa-maspalomas/dificultad.png',
+    TIME: '/impulsa-maspalomas/tiempo.png',
     DUNIA: {
         DEFAULT: '/impulsa-maspalomas/DUNIA_1.png',
         POINTING: '/impulsa-maspalomas/DUNIA_2.png'

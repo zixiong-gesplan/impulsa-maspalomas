@@ -2,21 +2,27 @@
 import { Chip } from '@components/Chip';
 import { Card } from '@components/Card';
 import { Leaf, LightbulbIcon, TreePalm } from '@lucide/astro';
+import { ASSETS } from '@consts/ASSETS';
 ---
 
 <section id="senderos" class="w-10/12 mx-auto">
     <div class="w-full">
         <div class="text-center mb-16">
             <Chip> Senderos </Chip>
-            <h2
-                class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4"
-            >
-                Las tres aventuras de Maspalomas
-            </h2>
-            <p class="max-w-[700px] mx-auto text-muted-foreground">
-                Descubre las tres aventuras que te llevarán a explorar la belleza y su
-                diversidad de la Reserva Natural Especial de las Dunas de Maspalomas.
-            </p>
+            <div class="flex items-center justify-center gap-4">
+                <div class="flex flex-col items-center">
+                    <h2
+                        class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4"
+                    >
+                        Las tres aventuras de Maspalomas
+                    </h2>
+                    <p class="max-w-[700px] mx-auto text-muted-foreground">
+                        Nuestra guía para estas tres aventuras es DUNIA BALANCÓN, una experta en
+                        la Reserva Natural Especial de las Dunas de Maspalomas y su entorno.
+                    </p>
+                </div>
+                <img src={ASSETS.DUNIA.DEFAULT} alt="Dunia Balancón" class="h-48" />
+            </div>
         </div>
         <div
             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto p-8"

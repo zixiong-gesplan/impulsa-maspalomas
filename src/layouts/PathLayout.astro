@@ -60,21 +60,33 @@ const { src, title, description, id } = Astro.props;
                     Estadísticas del recorrido
                 </h4>
                 <div class="grid grid-cols-2 gap-4">
-                    <div class="bg-white p-4 rounded-lg shadow">
-                        <h5 class="text-lg font-semibold">Distancia</h5>
-                        <p class="text-gray-600">2,3 km</p>
+                    <div class="bg-white p-4 rounded-lg shadow flex gap-2">
+                        <img src={ASSETS.LENGTH} alt="Distancia" />
+                        <div>
+                            <h5 class="text-lg font-semibold">Distancia</h5>
+                            <p class="text-gray-600">2,3 km</p>
+                        </div>
                     </div>
-                    <div class="bg-white p-4 rounded-lg shadow">
-                        <h5 class="text-lg font-semibold">Duración</h5>
-                        <p class="text-gray-600">2 horas</p>
+                    <div class="bg-white p-4 rounded-lg shadow flex gap-2">
+                        <img src={ASSETS.TIME} alt="Distancia" />
+                        <div>
+                            <h5 class="text-lg font-semibold">Duración</h5>
+                            <p class="text-gray-600">2 horas</p>
+                        </div>
                     </div>
-                    <div class="bg-white p-4 rounded-lg shadow">
-                        <h5 class="text-lg font-semibold">Dificultad</h5>
-                        <p class="text-gray-600">Fácil</p>
+                    <div class="bg-white p-4 rounded-lg shadow flex gap-2">
+                        <img src={ASSETS.DIFFICULTY} alt="Distancia" />
+                        <div>
+                            <h5 class="text-lg font-semibold">Dificultad</h5>
+                            <p class="text-gray-600">Fácil</p>
+                        </div>
                     </div>
-                    <div class="bg-white p-4 rounded-lg shadow">
-                        <h5 class="text-lg font-semibold">Desnivel</h5>
-                        <p class="text-gray-600">200 m</p>
+                    <div class="bg-white p-4 rounded-lg shadow flex gap-2">
+                        <img src={ASSETS.MAXIMUM_FEE} alt="Desnivel" />
+                        <div>
+                            <h5 class="text-lg font-semibold">Desnivel</h5>
+                            <p class="text-gray-600">50 m</p>
+                        </div>
                     </div>
                 </div>
             </div>
