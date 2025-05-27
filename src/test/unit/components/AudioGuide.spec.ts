@@ -8,10 +8,10 @@ test("AudioGuide component", async () => {
   const result = await astroContainer.renderToString(AudioGuide, {
     props: {
         src:"https://example.com/audio-guide",
-      title: "Test Title",
-      description: "Test Description",
-      audioUrl: "https://example.com/audio.mp3",
-      imageUrl: "https://example.com/image.jpg",
+        title: "Test Title",
+        description: "Test Description",
+        audioUrl: "https://example.com/audio.mp3",
+        imageUrl: "https://example.com/image.jpg",
     },
   })
   expect(result).not.toBeNull();
