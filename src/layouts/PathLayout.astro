@@ -10,7 +10,7 @@ const { src, title, description, id } = Astro.props;
 
 <Layout>
     <main
-        class={`flex flex-col bg-[url(${ASSETS.BACKGROUND})] bg-cover bg-no-repeat bg-center min-h-screen`}
+        class={`flex flex-col bg-[url("${ASSETS.BACKGROUND}")] bg-cover bg-no-repeat bg-center min-h-screen`}
     >
         <div class="w-10/12 mx-auto">
             <Breadcrums id={id} title={title} />
