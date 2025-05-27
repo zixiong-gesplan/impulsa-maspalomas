@@ -3,10 +3,11 @@ import Hero from '@pages/Home/sections/01-Hero.astro';
 import About from '@pages/Home/sections/02-About.astro';
 import Paths from '@pages/Home/sections/03-Paths.astro';
 import CTA from '@pages/Home/sections/04-CTA.astro';
+import { ASSETS } from '@consts/ASSETS';
 ---
 
 <main
-    class="flex flex-col bg-[url(/impulsa-maspalomas/background.png)] bg-local bg-top bg-cover bg-no-repeat min-h-screen"
+    class=`flex flex-col bg-[url(${ASSETS.BACKGROUND})] bg-local bg-top bg-cover bg-no-repeat min-h-screen`
 >
     {/* Hero Section */}
     <Hero />
@@ -17,12 +18,5 @@ import CTA from '@pages/Home/sections/04-CTA.astro';
     {/* Axes Section */}
     <Paths />
 
-    {/* Actions Section */}
-  <!-- <Actions /> -->
-
-  {/* Collaborators Section */}
-  <!-- <Collaborations /> -->
-
-  {/* CTA Section */}
-  <CTA />
+    <CTA />
 </main>
