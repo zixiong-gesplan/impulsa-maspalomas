@@ -1,4 +1,4 @@
-import { type Path } from "@types/Path";
+import type { Path } from "../types/Path";
 
 export const PATH_1: Path = {
   src: "/impulsa-maspalomas/Sendero_1.png",

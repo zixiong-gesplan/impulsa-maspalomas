@@ -1,1 +1,1 @@
-export { default as Breadcrums } from "./Breadcrums.astro";
+export { default as Breadcrums } from './Breadcrums.astro';

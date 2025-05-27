@@ -1,6 +1,7 @@
 ---
 import Breadcrums from '@components/Breadcrums/Breadcrums.astro';
 import Button from '@components/Button/Button.astro';
+import { ASSETS } from '@consts/ASSETS';
 import Layout from '@layouts/Layout.astro';
 import { Download, Share2 } from '@lucide/astro';
 
@@ -9,7 +10,7 @@ const { src, title, description, id } = Astro.props;
 
 <Layout>
     <main
-        class="flex flex-col bg-[url(/impulsa-maspalomas/background.png)] bg-cover bg-no-repeat bg-center min-h-screen"
+        class={`flex flex-col bg-[url(${ASSETS.BACKGROUND})] bg-cover bg-no-repeat bg-center min-h-screen`}
     >
         <div class="w-10/12 mx-auto">
             <Breadcrums id={id} title={title} />
@@ -80,7 +81,7 @@ const { src, title, description, id } = Astro.props;
 
             <div class="flex justify-between items-center mt-4">
                 <img
-                    src="/impulsa-maspalomas/DUNIA_2.png"
+                    src={ASSETS.DUNIA.POINTING}
                     alt="Dunia de Balancón"
                     class="w-auto h-56"
                     loading="lazy"

@@ -1,12 +1,13 @@
 ---
 import { AudioGuide } from '@components/AudioGuide';
+import { ASSETS } from '@consts/ASSETS';
 import { STAND_0 } from '@consts/STANDS';
 ---
 
 <section id="proyecto" class=" px-4 py-4 md:px-8 md:py-10 w-10/12 mx-auto">
     <div class="flex flex-col md:flex-row gap-4 mb-8">
         <img
-            src="/impulsa-maspalomas/Mapa.png"
+            src={ASSETS.MAP}
             alt="Senderos de Maspalomas"
             class="w-full md:w-1/2 h-auto mb-8 rounded-lg shadow-lg mx-auto"
         />

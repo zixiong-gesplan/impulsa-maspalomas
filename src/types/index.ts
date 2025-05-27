@@ -1,1 +1,2 @@
-export * from "./Stand";
+export * from './Stand';
+export * from './Path';
