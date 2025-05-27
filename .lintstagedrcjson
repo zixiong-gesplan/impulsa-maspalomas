@@ -1,0 +1,5 @@
+{
+    "*.{js,ts,md,json,-astro}": [
+        "eslint --fix"
+    ]
+}

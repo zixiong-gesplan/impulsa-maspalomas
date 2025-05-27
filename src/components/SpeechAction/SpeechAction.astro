@@ -1,41 +1,51 @@
 ---
-import Button from "@components/Button/Button.astro";
-import { PlayCircle, Repeat, StopCircle } from "@lucide/astro";
+import Button from '@components/Button/Button.astro';
+import { PlayCircle, Repeat, StopCircle } from '@lucide/astro';
 const { audio } = Astro.props;
 ---
 
 <div
-  class="flex flex-row items-start text-left gap-4 w-full"
-  data-audio={audio}
-  id="audio-guide"
+    class="flex flex-row items-start text-left gap-4 w-full"
+    data-audio={audio}
+    id="audio-guide"
 >
-  <Button
-    type="primary"
-    size="default"
-    aria-label="Repetir audioguía"
-    data-action="repeat"
-  >
-    <Repeat class="h-8 w-8" />
-  </Button>
-  <Button
-    type="primary"
-    size="default"
-    aria-label="Reproducir audioguía"
-    data-action="play"
-  >
-    <PlayCircle class="h-8 w-8" />
-  </Button>
-  <Button
-    type="primary"
-    size="default"
-    aria-label="Detener audioguía"
-    data-action="stop"
-  >
-    <StopCircle class="h-8 w-8" />
-  </Button>
+    <Button
+        type="primary"
+        size="default"
+        aria-label="Repetir audioguía"
+        data-action="repeat"
+    >
+        <Repeat class="h-8 w-8" />
+    </Button>
+    <Button
+        type="primary"
+        size="default"
+        aria-label="Reproducir audioguía"
+        data-action="play"
+    >
+        <PlayCircle class="h-8 w-8" />
+    </Button>
+    <Button
+        type="primary"
+        size="default"
+        aria-label="Detener audioguía"
+        data-action="stop"
+    >
+        <StopCircle class="h-8 w-8" />
+    </Button>
 </div>
 
 <script>
+
+
+
+
+
+
+
+
+
+
   const synth = window.speechSynthesis;
   const text = document
     .querySelector("#audio-guide")!
@@ -87,4 +97,14 @@ const { audio } = Astro.props;
   document
     .querySelector('button[data-action="repeat"]')!
     .addEventListener("click", repeatAudio);
+
+
+
+
+
+
+
+
+
+
 </script>
