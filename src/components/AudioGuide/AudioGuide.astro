@@ -6,7 +6,6 @@ import { PlayCircle, Repeat, StopCircle } from '@lucide/astro';
 const { src, chip, title, description, audio } = Astro.props;
 
 const words = audio.split(' ');
-console.log(words.length)
 const estimatedWPM = 180;
 const duration = Math.round((words.length / estimatedWPM) * 60);
 ---
@@ -15,7 +14,7 @@ const duration = Math.round((words.length / estimatedWPM) * 60);
     class="border border-gray-300 rounded-lg p-4 flex flex-col md:flex-row items-center justify-center h-full gap-4 bg-gray-100 shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out"
 >
     <div
-        class="flex items-center justify-center bg-gray-100 rounded-lg mb-4 w-1/2"
+        class="flex items-center justify-center bg-gray-100 rounded-lg mb-4 w-1/4"
     >
         <img
             src={src}
@@ -24,7 +23,7 @@ const duration = Math.round((words.length / estimatedWPM) * 60);
         />
     </div>
 
-    <div class="flex flex-col"
+    <div class="flex flex-col w-3/4"
       data-words={words}
       data-duration={duration}
       id="audioguide"
@@ -32,7 +31,7 @@ const duration = Math.round((words.length / estimatedWPM) * 60);
         <div class="flex flex-col items-start text-left gap-2 mb-4 px-2">
             <Chip>{chip}</Chip>
             <h3 class="text-2xl font-semibold">{title}</h3>
-            <p id="transcription" class="text-sm text-gray-500 h-36 overflow-y-scroll">
+            <p id="transcription" class="text-sm text-gray-500 h-36 overflow-y-scroll text-balance pr-4">
                 {words.map((word: string, idx: number) => (
                     <span id={`word-${idx}`}>
                         {word}
@@ -80,8 +79,7 @@ const duration = Math.round((words.length / estimatedWPM) * 60);
 </div>
 
 <script type="module">
-  const words = document.querySelector('#audioguide').dataset.words;
-  const duration = document.querySelector('#audioguide').dataset.duration;
+  const { words, duration } = document.querySelector('#audioguide').dataset;
   const utterance = new SpeechSynthesisUtterance();
   utterance.text = words.split(",");
   utterance.rate = 1;
@@ -89,27 +87,40 @@ const duration = Math.round((words.length / estimatedWPM) * 60);
   utterance.pitch = 1;
   let currentWordIndex = 0;
   let interval = null;
+  const initialSpan = document.getElementById(`word-0`);
+  const initialTop = initialSpan.offsetTop;
+  const container = document.querySelector('#transcription');
 
+  function lowlightWord(index){
+    let spans = document.querySelectorAll("#transcription span");
+    for(let i = 0; i< index; i++){
+      if(!spans[i]){return}
+      spans[i].classList.add('text-gray-300')
+    }
+  }
   function highlightWord(index) {
-    document.querySelectorAll("#transcription span").forEach((span, i) => {
-      span.classList.toggle("font-bold", i === index);
+    const spans = document.querySelectorAll("#transcription span");
+    spans.forEach((span, i) => {
+        span.classList.toggle("font-medium", i === index);
     });
+    const currentSpan = document.getElementById(`word-${index}`);
+    if (currentSpan && container) {
+      const spanTop = currentSpan.offsetTop;
+      container.scrollTo({
+        top:(spanTop - initialTop),
+        behavior: 'smooth'
+      });
+    }
   }
  const synth = window.speechSynthesis;
-  const audioGuideElem = document.querySelector("#audio-guide");
-  const text = audioGuideElem ? audioGuideElem.getAttribute("data-audio") : "";
 
   function stopAudio() {
-    if (synth.speaking) {
+    if (!synth.speaking) {
+        return;
+    }
       synth.cancel(); // Stop the speech synthesis
       clearInterval(interval)
-      console.log("Audio stopped");
-      return;
-    }
-
-    console.log("No audio is playing to stop");
-    return;
-  
+      return;  
   }
   document
     .querySelector('button[data-action="stop"]')
@@ -127,6 +138,7 @@ const duration = Math.round((words.length / estimatedWPM) * 60);
         clearInterval(interval);
         return;
       }
+      lowlightWord(currentWordIndex)
       highlightWord(currentWordIndex);
     }, 301);
     synth.speak(utterance);
