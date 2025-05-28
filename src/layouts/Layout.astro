@@ -1,7 +1,6 @@
 ---
 import { Footer } from '@components/Footer';
 import { Navbar } from '@components/Navbar';
-import { ClientRouter } from 'astro:transitions';
 
 import '@styles/global.css';
 ---
@@ -15,7 +14,6 @@ import '@styles/global.css';
         <meta name="generator" content={Astro.generator} />
         <base href="./impulsa-maspalomas" />
         <title>Impulsa Masdunas</title>
-        <ClientRouter />
     </head>
     <body class="flex min-h-screen flex-col w-full">
         <Navbar />

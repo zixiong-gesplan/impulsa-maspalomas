@@ -1,9 +1,10 @@
 ---
 import Logo from '@assets/logo.svg';
+import { ASSETS } from '@consts/ASSETS';
 ---
 
 <footer class="border-t py-12 md:py-16 bg-gray-50">
-    <div class="container grid grid-cols-1 md:grid-cols-4 gap-8 mx-auto">
+    <div class="container grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto">
         <div class="md:col-span-2 px-8">
             <div class="flex items-center gap-2 mb-4">
                 <Logo class="w-96" />
@@ -15,59 +16,19 @@ import Logo from '@assets/logo.svg';
             </p>
         </div>
         <div>
-            <h3 class="font-medium mb-4">Enlaces rápidos</h3>
-            <ul class="space-y-2">
-                <li>
-                    <a
-                        href="#proyecto"
-                        class="text-sm text-muted-foreground hover:text-amber-600"
-                    >
-                        El Proyecto
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="#senderos"
-                        class="text-sm text-muted-foreground hover:text-amber-600"
-                    >
-                        senderos de Actuación
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="#actuaciones"
-                        class="text-sm text-muted-foreground hover:text-amber-600"
-                    >
-                        Actuaciones
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="#contacto"
-                        class="text-sm text-muted-foreground hover:text-amber-600"
-                    >
-                        Contacto
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div>
             <h3 class="font-medium mb-4">Contacto</h3>
             <ul class="space-y-2">
-                <li class="text-sm text-muted-foreground">Cabildo de Gran Canaria</li>
                 <li class="text-sm text-muted-foreground">
-                    Consejo Insular de la Energía (CIEGC)
+                    <a href="https://www.mintur.gob.es/es-es/Paginas/index.aspx" target="_blank" rel="noopener noreferrer">Gobierno de España. Ministerio de Industria, Comercio y Turismo</a>
                 </li>
                 <li class="text-sm text-muted-foreground">
-                    Ayuntamiento de San Bartolomé de Tirajana
+                    <a href="https://cabildo.grancanaria.com/" target="_blank" rel="noopener noreferrer">Cabildo de Gran Canaria</a>
                 </li>
-                <li>
-                    <a
-                        href="mailto:info@impulsamaspalomas.es"
-                        class="text-sm text-blue-600 hover:underline"
-                    >
-                        info@impulsamaspalomas.es
-                    </a>
+                <li class="text-sm text-muted-foreground">
+                    <a href="https://www.gobiernodecanarias.org/turismo/" target="_blank" rel="noopener noreferrer">Gobierno de Canarias. Consejeria de Turismo y Empleo</a>
+                </li>
+                <li class="text-sm text-muted-foreground">
+                    <a href="https://www.gesplan.es/" target="_blank" rel="noopener noreferrer">Gestión y Planeamiento Territorial y Medioambiental S.A.</a>
                 </li>
             </ul>
         </div>
@@ -83,11 +44,11 @@ import Logo from '@assets/logo.svg';
                 {' '}
                 ImpulsaMaspalomas. Todos los derechos reservados.
             </p>
-            <div class="flex items-center gap-2">
-                <span class="text-xs text-muted-foreground">
-                    Proyecto financiado por la Unión Europea - NextGenerationEU
-                </span>
-            </div>
+            <img src={ASSETS.FEDER} alt="Financiado por la Unión Europea | Ministerio de Industria, Comercio y Turismo. Gobierno de España | Plan de Recuperación y Transformación y Resiliencia | Cabildo de Gran Canaria | Gobierno de Canarias. Consejería de Turismo y Empleo | Gestión y Planeamiento Territorial y Medioambiental. Dirección de Medioambiente Las Palmas y Cambio Climático."
+    
+                class="mx-auto"
+            >
         </div>
+
     </div>
 </footer>

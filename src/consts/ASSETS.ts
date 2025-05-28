@@ -16,5 +16,6 @@ export const ASSETS = {
         UP: '/impulsa-maspalomas/Sendero_1.png',
         MIDDLE: '/impulsa-maspalomas/Sendero_2.png',
         DOWN: '/impulsa-maspalomas/Sendero_3.png'
-    }
+    },
+    FEDER: '/impulsa-maspalomas/feder.png'
 };
