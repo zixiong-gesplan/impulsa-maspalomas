@@ -6,7 +6,7 @@ import { ASSETS } from '@consts/ASSETS';
 import Layout from '@layouts/Layout.astro';
 import { Download, Share2 } from '@lucide/astro';
 
-const { src, title, description, id } = Astro.props;
+const { src, title, description, id, kmz, guide} = Astro.props;
 ---
 
 <Layout>
@@ -24,8 +24,12 @@ const { src, title, description, id } = Astro.props;
                 </h2>
                 <div class="flex flex-col sm:flex-row sm:gap-4">
                     <Button type="primary" size="default">
-                        <Download />
-                        Descargar
+                        <a href={kmz} target="_blank" rel="noopener noreferrer"
+                            class="flex sm:gap-4"
+                        >
+                            <Download />
+                            Descargar
+                        </a>
                     </Button>
                     <Button type="secondary" size="default">
                         <Share2 />
@@ -58,25 +62,25 @@ const { src, title, description, id } = Astro.props;
                     <StadisticCard
                         src={ASSETS.LENGTH}
                         alt="Distancia"
-                        value="2,3 km"
+                        value={guide.length}
                         label="Distancia"
                     />
                     <StadisticCard
                         src={ASSETS.TIME}
                         alt="Duración"
-                        value="2 horas"
+                        value={guide.time ?? '-'}
                         label="Duración"
                     />
                     <StadisticCard
                         src={ASSETS.DIFFICULTY}
                         alt="Dificultad"
-                        value="Fácil"
+                        value={guide.difficulty}
                         label="Dificultad"
                     />
                     <StadisticCard
                         src={ASSETS.MAXIMUM_FEE}
                         alt="Desnivel"
-                        value="50 m"
+                        value={guide.maximum_fee ?? '-'}
                         label="Desnivel"
                     />
                 </div>
