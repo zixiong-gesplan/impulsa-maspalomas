@@ -1,1 +1,0 @@
-export { default as SpeechAction } from './SpeechAction.astro';

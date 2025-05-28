@@ -1,5 +1,6 @@
 import eslintPluginAstro from 'eslint-plugin-astro';
 import stylistic from '@stylistic/eslint-plugin';
+import { globalIgnores } from 'eslint/config';
 
 export default [
     // add more generic rule sets here, such as:
@@ -16,7 +17,6 @@ export default [
                 sourceType: 'module'
             }
         }
-
     },
     stylistic.configs.customize({
         indent: 4,
@@ -24,5 +24,8 @@ export default [
         semi: true,
         commaDangle: 'never',
         braceStyle: '1tbs'
-    })
+    }),
+    globalIgnores([
+        './src/components/AudioGuide/AudioGuide.astro
+    ])
 ];

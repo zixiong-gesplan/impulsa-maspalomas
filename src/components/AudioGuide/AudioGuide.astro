@@ -1,8 +1,14 @@
 ---
+import { Button } from '@components/Button';
 import { Chip } from '@components/Chip';
-import { SpeechAction } from '@components/SpeechAction';
+import { PlayCircle, Repeat, StopCircle } from '@lucide/astro';
 
 const { src, chip, title, description, audio } = Astro.props;
+
+const words = audio.split(' ');
+console.log(words.length)
+const estimatedWPM = 180;
+const duration = Math.round((words.length / estimatedWPM) * 60);
 ---
 
 <div
@@ -11,24 +17,136 @@ const { src, chip, title, description, audio } = Astro.props;
     <div
         class="flex items-center justify-center bg-gray-100 rounded-lg mb-4 w-1/2"
     >
-    <!-- <Placeholder class="h-full rounded-3xl" /> -->
-    <img
-        src={src}
-        alt=""
-        class="object-cover aspect-square rounded-lg w-full h-full"
-    />
+        <img
+            src={src}
+            alt=""
+            class="object-cover aspect-square rounded-lg w-full h-full"
+        />
     </div>
 
-    <div class="flex flex-col">
+    <div class="flex flex-col"
+      data-words={words}
+      data-duration={duration}
+      id="audioguide"
+    >
         <div class="flex flex-col items-start text-left gap-2 mb-4 px-2">
             <Chip>{chip}</Chip>
             <h3 class="text-2xl font-semibold">{title}</h3>
-            <p class="text-sm text-gray-500 line-clamp-6">
-                {description}
+            <p id="transcription" class="text-sm text-gray-500 h-36 overflow-y-scroll">
+                {words.map((word: string, idx: number) => (
+                    <span id={`word-${idx}`}>
+                        {word}
+                        {' '}
+                    </span>
+                ))}
+
+                <!-- {audio} -->
             </p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-4 mb-4">
-            <SpeechAction audio={audio} />
+        <div
+            class="flex flex-row items-start text-left gap-4 w-full"
+            data-audio={audio}
+            id="audio-guide"
+        >
+            <div class="flex flex-col sm:flex-row gap-4 mb-4">
+                <Button
+                    type="primary"
+                    size="small"
+                    aria-label="Repetir audioguía"
+                    data-action="repeat"
+                >
+                    <Repeat class="h-8 w-8" />
+                </Button>
+                <Button
+                    type="primary"
+                    size="small"
+                    aria-label="Reproducir audioguía"
+                    data-action="play"
+                >
+                    <PlayCircle class="h-8 w-8" />
+                </Button>
+                <Button
+                    type="primary"
+                    size="small"
+                    aria-label="Detener audioguía"
+                    data-action="stop"
+                >
+                    <StopCircle class="h-8 w-8" />
+                </Button>
+            </div>
         </div>
+
     </div>
 </div>
+
+<script type="module">
+  const words = document.querySelector('#audioguide').dataset.words;
+  const duration = document.querySelector('#audioguide').dataset.duration;
+  const utterance = new SpeechSynthesisUtterance();
+  utterance.text = words.split(",");
+  utterance.rate = 1;
+  utterance.lang = 'es-ES';
+  utterance.pitch = 1;
+  let currentWordIndex = 0;
+  let interval = null;
+
+  function highlightWord(index) {
+    document.querySelectorAll("#transcription span").forEach((span, i) => {
+      span.classList.toggle("font-bold", i === index);
+    });
+  }
+ const synth = window.speechSynthesis;
+  const audioGuideElem = document.querySelector("#audio-guide");
+  const text = audioGuideElem ? audioGuideElem.getAttribute("data-audio") : "";
+
+  function stopAudio() {
+    if (synth.speaking) {
+      synth.cancel(); // Stop the speech synthesis
+      clearInterval(interval)
+      console.log("Audio stopped");
+      return;
+    }
+
+    console.log("No audio is playing to stop");
+    return;
+  
+  }
+  document
+    .querySelector('button[data-action="stop"]')
+    .addEventListener("click", stopAudio);
+
+  function playAudio() {
+    // Check if the audio is playing
+    if (synth.speaking) {
+      return
+    } 
+    highlightWord(currentWordIndex);
+    interval = setInterval(() => {
+      currentWordIndex++;
+      if (currentWordIndex >= words.length) {
+        clearInterval(interval);
+        return;
+      }
+      highlightWord(currentWordIndex);
+    }, 301);
+    synth.speak(utterance);
+
+    // Return a message or perform any other action if needed
+    // For example, you can return a message to indicate that the audio is playing
+    // return "Audio is playing";
+    return "";
+  }
+
+  document
+    .querySelector('button[data-action="play"]')
+    .addEventListener("click", playAudio);
+
+  function repeatAudio() {
+    stopAudio(); // Stop any currently playing audio
+    playAudio(); // Play the audio again
+  }
+  document
+    .querySelector('button[data-action="repeat"]')
+    .addEventListener("click", repeatAudio);
+
+</script>
