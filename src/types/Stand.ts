@@ -13,7 +13,7 @@ export type Stand = {
     next: {
         label: string;
         url: string;
-    } | null;
+    }[] | null;
     prev: {
         label: string;
         url: string;
